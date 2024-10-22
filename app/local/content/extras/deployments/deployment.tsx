@@ -111,7 +111,7 @@ const ChainDeployment: FC<{
                         </div>
                         <div
                             className={
-                                'bg-ens-light-background-secondary border-ens-light-border flex items-center justify-between gap-2 overflow-x-auto rounded-lg border px-3 py-[10px] text-base md:w-[480px]'
+                                'flex items-center justify-between gap-2 overflow-x-auto rounded-lg border px-3 py-[10px] text-base md:w-[480px]'
                             }
                         >
                             <pre className="text-wrap break-all p-0 text-base">

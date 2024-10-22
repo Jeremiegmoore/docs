@@ -8,7 +8,13 @@ import { SearchModal } from './SearchModal';
 
 function SearchIcon(properties) {
     return (
-        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true" {...properties}>
+        <svg
+            viewBox="0 0 20 20"
+            fill="none"
+            aria-hidden="true"
+            className={clsx('size-5', properties.className)}
+            {...properties}
+        >
             <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

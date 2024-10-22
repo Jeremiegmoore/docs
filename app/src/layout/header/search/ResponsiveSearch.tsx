@@ -190,7 +190,7 @@ export const ResponsiveSearch = () => {
     return (
         <div
             id="searchbar"
-            className="bg-ens-light-background-primary dark:bg-ens-dark-background-primary w-full rounded-2xl text-[#18181b] dark:text-white"
+            className="w-full rounded-2xl bg-ens-light-background-primary text-[#18181b] dark:bg-ens-dark-background-primary dark:text-white"
         >
             <div className="space-y-3 p-4">
                 <div className="relative z-10">
@@ -199,7 +199,7 @@ export const ResponsiveSearch = () => {
                         onClick={() => {
                             setSelect(-2);
                         }}
-                        className="border-ens-light-border outline-ens-dark-blue-primary focus:outline-ens-light-blue-primary dark:border-ens-dark-border w-full rounded-xl border py-2 pl-10 text-xl"
+                        className="w-full rounded-xl border border-ens-light-border py-2 pl-10 text-xl outline-ens-dark-blue-primary focus:outline-ens-light-blue-primary dark:border-ens-dark-border"
                         placeholder="Search Content..."
                         // eslint-disable-next-line jsx-a11y/no-autofocus
                         autoFocus={true}
@@ -227,8 +227,8 @@ export const ResponsiveSearch = () => {
                             setSelect(-2);
                         }}
                     />
-                    <div className="absolute inset-y-0 left-3 flex h-full items-center text-neutral-300">
-                        <MagnifyingGlassSVG />
+                    <div className="absolute inset-y-0 left-4 flex h-full items-center text-neutral-300">
+                        <MagnifyingGlassSVG className="size-4" />
                     </div>
                     <div className="absolute inset-y-0 right-3 flex h-full items-center text-neutral-300">
                         {isLoading && <FiLoader />}

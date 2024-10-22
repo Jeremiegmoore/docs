@@ -1,11 +1,12 @@
 import { FC } from 'react';
-import { goerli, mainnet, sepolia } from 'viem/chains';
+import { holesky, mainnet, sepolia } from 'viem/chains';
 
 import { DemoBorder } from './border/Border';
 import { ETHRegistryDemo } from './ethregistry/ETHRegistryDemo';
 import { ETHRegistryRenewDemo } from './ethregistryrenew/ETHRegistryRenewDemo';
 import { ListNamesDemo } from './listnames/ListNamesDemo';
 import { NameLookupDemo } from './namelookup/NameLookup';
+import { ResolverPlaygroundDemo } from './resolverplayground';
 import { ResolverTestDemo } from './resolvertest';
 import { ReverseSetNameForDemo } from './reverse-set-name-for/ReverseSetNameForDemo';
 import { SendTransactionDemo } from './send-transaction/SendTransaction';
@@ -15,13 +16,13 @@ const demos = {
     ethregistry: {
         title: 'Register a name',
         wallet: true,
-        chains: new Set([mainnet.id, goerli.id, sepolia.id]),
+        chains: new Set([mainnet.id, sepolia.id]),
         component: ETHRegistryDemo,
     },
     ethregistry_renew: {
         title: 'Renew a name',
         wallet: true,
-        chains: new Set([mainnet.id, goerli.id, sepolia.id]),
+        chains: new Set([mainnet.id, sepolia.id]),
         component: ETHRegistryRenewDemo,
     },
     name_lookup: {
@@ -47,14 +48,20 @@ const demos = {
     reversesetnamefordemo: {
         title: 'Reverse Set Name For',
         wallet: true,
-        chains: new Set([mainnet.id, goerli.id]),
+        chains: new Set([mainnet.id]),
         component: ReverseSetNameForDemo,
     },
     listnamesdemo: {
         title: 'List Names',
         wallet: true,
-        chains: new Set([mainnet.id, goerli.id]),
+        chains: new Set([mainnet.id, sepolia.id, holesky.id]),
         component: ListNamesDemo,
+    },
+    resolverdemo: {
+        title: 'Resolver Playground',
+        wallet: true,
+        chains: new Set([mainnet.id, sepolia.id, holesky.id]),
+        component: ResolverPlaygroundDemo,
     },
 };
 

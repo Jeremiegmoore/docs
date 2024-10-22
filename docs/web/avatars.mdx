@@ -39,7 +39,7 @@ import { useEnsAvatar } from "wagmi";
 function App() {
   const { data: ensAvatar } = useEnsAvatar({
     address: "luc.eth",
-    chainId: 1, // (1 = Ethereum Mainnet, 5 = Goerli)
+    chainId: 1, // (1 = Ethereum Mainnet, 11155111 = Sepolia)
   });
 
   return (
@@ -62,6 +62,12 @@ import { publicClient } from "./client";
 const ensAvatar = await publicClient.getEnsAvatar({
   name: normalize("luc.eth"),
 });
+```
+
+```py {{ variant: 'web3py', link: 'https://web3py.readthedocs.io/en/latest/ens_overview.html#read-text-metadata-for-an-ens-record' }}
+from ens.auto import ns
+
+avatar = ns.get_text('alice.eth', 'avatar')
 ```
 
 ```go {{ title: "Go", variant: "go" }}

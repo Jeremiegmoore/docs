@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import { FaJava, FaReact, FaRust } from 'react-icons/fa';
-import { SiDelphi, SiKotlin, SiNuget } from 'react-icons/si';
+import { SiDelphi, SiKotlin, SiNuget, SiPython } from 'react-icons/si';
 import { TbBrandGolang, TbBrandJavascript } from 'react-icons/tb';
 
 type Language = {
@@ -48,7 +48,7 @@ export const ensLibraries: Language[] = [
                 logo: '/icons/legacy/logos/ethers.svg',
             },
             {
-                href: 'https://github.com/ensdomains/ensjs-v3',
+                href: 'https://github.com/ensdomains/ensjs',
                 name: 'ENSjs',
                 description: '',
                 logo: '/icons/legacy/logos/ensjs.svg',
@@ -59,6 +59,12 @@ export const ensLibraries: Language[] = [
                 name: 'Web3.js',
                 description: '',
                 logo: '/icons/legacy/logos/web3js.svg',
+            },
+            {
+                href: 'https://portal.thirdweb.com/typescript/v5',
+                name: 'Thirdweb',
+                description: '',
+                logo: '/icons/libraries/thirdweb.svg',
             },
         ],
     },
@@ -76,6 +82,19 @@ export const ensLibraries: Language[] = [
                 href: 'https://github.com/alloy-rs/',
                 name: 'Alloy',
                 description: '',
+                logo: undefined,
+            },
+        ],
+    },
+    {
+        name: 'Python',
+        logo: <SiPython />,
+        libraries: [
+            {
+                href: 'https://github.com/ethereum/web3.py',
+                name: 'web3.py',
+                description:
+                    'A python interface for interacting with the Ethereum blockchain and ecosystem.',
                 logo: undefined,
             },
         ],

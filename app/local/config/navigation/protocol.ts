@@ -1,6 +1,8 @@
 /* eslint-disable sonarjs/no-duplicate-string */
 import { SectionData } from '../navigation';
 
+export const showWIP = false;
+
 export const navigation: SectionData[] = [
     {
         name: 'Intro',
@@ -73,9 +75,19 @@ export const navigation: SectionData[] = [
                 title: '',
                 links: [
                     {
+                        title: 'Quickstart',
+                        href: '/web/quickstart',
+                        icon: '⚡',
+                    },
+                    {
                         title: 'Getting Started',
                         href: '/web',
                         icon: '👋',
+                    },
+                    {
+                        title: 'Tools and Libraries',
+                        href: '/web/libraries',
+                        icon: '🛠️',
                     },
                 ],
             },
@@ -84,17 +96,7 @@ export const navigation: SectionData[] = [
                 icon: '🌐',
                 links: [
                     {
-                        title: 'Tools and Libraries',
-                        href: '/web/libraries',
-                        icon: '🛠️',
-                    },
-                    {
-                        title: 'Quickstart',
-                        href: '/web/quickstart',
-                        icon: '⚡',
-                    },
-                    {
-                        title: 'Address Lookup',
+                        title: 'Addresses',
                         href: '/web/resolution',
                         icon: '🔍',
                     },
@@ -110,7 +112,7 @@ export const navigation: SectionData[] = [
                         icon: '🔍',
                     },
                     {
-                        title: 'List Names',
+                        title: 'Listing Names',
                         href: '/web/enumerate',
                         icon: '🔍',
                     },
@@ -121,26 +123,26 @@ export const navigation: SectionData[] = [
                 icon: '⚙️',
                 links: [
                     {
-                        title: 'Naming Smart-contracts',
-                        href: '/web/naming-contracts',
+                        title: 'Decentralized Web',
+                        href: '/dweb/intro',
                     },
                     {
                         title: 'Issuing Subdomains',
                         href: '/web/subdomains',
                     },
                     {
-                        title: 'Multichain',
+                        title: 'Naming Smart-contracts',
+                        href: '/web/naming-contracts',
+                    },
+                    {
+                        // eslint-disable-next-line quotes
+                        title: "Layer 2's & Multichain",
                         href: '/web/multichain',
                         icon: '⛓️',
                     },
                     {
                         title: 'Subgraph',
                         href: '/web/subgraph',
-                    },
-                    {
-                        title: 'Decentralized Web',
-                        href: '/dweb/intro',
-                        wip: true,
                     },
                     // {
                     //     title: 'Sign In With Ethereum (SIWE)',
@@ -164,8 +166,8 @@ export const navigation: SectionData[] = [
                         external: true,
                     },
                     {
-                        title: 'Media kit',
-                        href: 'https://github.com/ensdomains/media-kit',
+                        title: 'Brand',
+                        href: 'https://ens.domains/brand',
                         external: true,
                     },
                 ],
@@ -183,7 +185,7 @@ export const navigation: SectionData[] = [
                 title: '',
                 links: [
                     {
-                        title: 'Welcome',
+                        title: 'Overview',
                         href: '/contracts',
                         icon: '👋',
                     },
@@ -222,21 +224,27 @@ export const navigation: SectionData[] = [
                         icon: '🏛️',
                     },
                     {
-                        title: 'Writing your own resolver',
-                        href: '/resolvers/writing',
-                        wip: 45,
-                        icon: '✍️',
-                    },
-                    {
                         title: 'Interacting with a resolver',
                         href: '/resolvers/interacting',
                         wip: 55,
                         icon: '👉',
                     },
                     {
+                        title: 'Writing your own resolver',
+                        href: '/resolvers/writing',
+                        wip: 45,
+                        icon: '✍️',
+                    },
+                    {
                         title: 'Cross Chain Resolvers',
                         href: '/resolvers/ccip-read',
                         icon: '⛓️',
+                    },
+                    {
+                        title: 'Universal Resolver',
+                        href: '/resolvers/universal',
+                        wip: 70,
+                        icon: '✍️',
                     },
                     {
                         title: 'Interface Reference',
@@ -322,6 +330,11 @@ export const navigation: SectionData[] = [
                         href: '/wrapper/usecases',
                         icon: '✨',
                     },
+                    {
+                        title: 'Creating a Subname Registrar',
+                        href: '/wrapper/creating-subname-registrar',
+                        icon: '🕹️',
+                    },
                 ],
             },
         ],
@@ -334,21 +347,38 @@ export const navigation: SectionData[] = [
         links: [
             {
                 title: '',
-                links: [{ title: '👋 Welcome', href: '/dao' }],
+                links: [{ title: 'Welcome', href: '/dao' }],
             },
             {
-                title: '🧑‍🎓 The interesting bits',
+                title: 'The interesting bits',
                 links: [
                     {
-                        title: '📜 Constitution',
+                        title: 'Constitution',
                         href: '/dao/constitution',
                     },
-                    { title: '🏛️ Foundation', href: '/dao/foundation' },
-                    { title: '🪂 Airdrop', href: '/dao/airdrop' },
+                    { title: 'Foundation', href: '/dao/foundation' },
+                    { title: 'Token & Airdrop', href: '/dao/token' },
                 ],
             },
             {
-                title: '🔗 Links',
+                title: 'Good to know',
+                links: [
+                    {
+                        title: 'Submit Proposal',
+                        href: '/dao/proposals/submit',
+                    },
+                    {
+                        title: 'DAO Stewards',
+                        href: '/dao/stewards',
+                    },
+                    {
+                        title: 'Working Group Rules',
+                        href: '/dao/wg/rules',
+                    },
+                ],
+            },
+            {
+                title: 'Links',
                 links: [
                     {
                         title: 'Discourse',
@@ -372,43 +402,49 @@ export const navigation: SectionData[] = [
                     },
                 ],
             },
-            // {
-            //     title: 'Governance Process',
-            //     links: [
-            //         {
-            //             title: 'Governance Process',
-            //             href: '/dao/governance/process',
-            //         },
-            //         {
-            //             title: 'Moderator Checklist',
-            //             href: '/dao/governance/moderator',
-            //         },
-            //     ],
-            // },
             {
-                title: '🧠 Good to know',
+                title: 'Proposals Term 5',
                 links: [
                     {
-                        title: 'Submit Proposal',
-                        href: '/dao/proposals/submit',
+                        // eslint-disable-next-line prettier/prettier
+                        title: '5.16 - [Executable] Reimbursement of ENS Labs’ legal fees in eth.link litigation',
+                        href: '/dao/proposals/5.16',
                     },
                     {
-                        title: 'DAO Stewards',
-                        href: '/dao/stewards',
+                        // eslint-disable-next-line prettier/prettier
+                        title: '5.15 - [Social] ENS Governor Improvement Proposal: ProposalBond',
+                        href: '/dao/proposals/5.15',
                     },
-                    // {
-                    //     title: 'Voting Procedure',
-                    //     href: '/dao/proposals/voting',
-                    // },
                     {
-                        title: 'Working Group Rules',
-                        href: '/dao/wg/rules',
+                        // eslint-disable-next-line prettier/prettier
+                        title: '5.14 - [Executable] Endowment permissions to karpatkey - Update #4',
+                        href: '/dao/proposals/5.14',
                     },
-                ],
-            },
-            {
-                title: '📖 Proposals Term 5',
-                links: [
+                    {
+                        // eslint-disable-next-line prettier/prettier
+                        title: '5.13 - [Executable] Security Council',
+                        href: '/dao/proposals/5.13',
+                    },
+                    {
+                        // eslint-disable-next-line prettier/prettier
+                        title: '5.12 - [Executable] Roles Modifier V2 Migration & Updates to Endowment Permissions',
+                        href: '/dao/proposals/5.12',
+                    },
+                    {
+                        // eslint-disable-next-line prettier/prettier
+                        title: '5.11 - [Executable] Fund the Meta-Governance Working Group (Term 5)',
+                        href: '/dao/proposals/5.11',
+                    },
+                    {
+                        // eslint-disable-next-line prettier/prettier
+                        title: '5.10 - [Social] Confirming the ENS DAO Security Council Members',
+                        href: '/dao/proposals/5.10',
+                    },
+                    {
+                        // eslint-disable-next-line prettier/prettier
+                        title: '5.9 - [Social] Funding Request: ENS Meta-Governance Working Group Term 5 (Q1/Q2)',
+                        href: '/dao/proposals/5.9',
+                    },
                     {
                         // eslint-disable-next-line prettier/prettier
                         title: '5.8 - [Social] ENS Steward Vesting Proposal',
@@ -455,7 +491,7 @@ export const navigation: SectionData[] = [
                 ],
             },
             {
-                title: '📙 Proposals Term 4',
+                title: 'Proposals Term 4',
                 links: [
                     {
                         title: '4.10 - [Social] Transfer ENS Root Key Ownership to the ENS DAO',
@@ -500,7 +536,7 @@ export const navigation: SectionData[] = [
                 ],
             },
             {
-                title: '📙 Proposals Term 3',
+                title: 'Proposals Term 3',
                 links: [
                     {
                         title: '3.7 - [Social] Approval of ENS Name Normalization Standard (ENSIP-15)',
@@ -541,7 +577,7 @@ export const navigation: SectionData[] = [
                 ],
             },
             {
-                title: '📙 Proposals Term 2',
+                title: 'Proposals Term 2',
                 links: [
                     {
                         title: '2.2.5 - [Social] Selection of an ENS endowment fund manager',
@@ -570,7 +606,7 @@ export const navigation: SectionData[] = [
                 ],
             },
             {
-                title: '📗 Proposals Term 1',
+                title: 'Proposals Term 1',
                 links: [
                     {
                         title: '1.9 - [Executable] Fund the Protocol Guild pilot with 200,000 $ENS',
@@ -627,7 +663,7 @@ export const navigation: SectionData[] = [
                 ],
             },
             {
-                title: '📘 Proposals Term 0',
+                title: 'Proposals Term 0',
                 links: [
                     {
                         title: '0.4 - [Social] Proposal: Creation of Foundational Working Groups and Working Group Rules',
@@ -657,17 +693,14 @@ export const navigation: SectionData[] = [
         links: [
             {
                 title: '',
-                links: [{ title: 'Welcome', href: '/ensip', icon: '👋' }],
+                links: [
+                    { title: 'What is an ENSIP?', href: '/ensip', icon: '👋' },
+                ],
             },
             {
-                title: 'Improvement Proposals (ENSIPs)',
+                title: 'Proposals',
                 icon: '📖',
                 links: [
-                    {
-                        title: 'Explained',
-                        href: '/ensip',
-                        icon: '🧑‍🏫',
-                    },
                     { title: '1 - ENS', href: '/ensip/1' },
                     { title: '2 - Hash Registrar', href: '/ensip/2' },
                     {
@@ -721,6 +754,10 @@ export const navigation: SectionData[] = [
                     {
                         title: '18 - Profile Text Records',
                         href: '/ensip/18',
+                    },
+                    {
+                        title: '19 - EVM-chain Reverse Resolution', // '19 - Multichain Primary Names',
+                        href: '/ensip/19',
                     },
                 ],
             },

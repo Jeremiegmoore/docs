@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import useSWR from 'swr';
-import { goerli, mainnet } from 'viem/chains';
+import { holesky, mainnet, sepolia } from 'viem/chains';
 import { useAccount } from 'wagmi';
 
 import { ClientOnly } from '@/ClientOnly';
@@ -11,9 +11,14 @@ import { ProfileAvatar } from '#/content/prose/profile/ProfileAvatar';
 
 import { OwnerField } from '../ethregistry/inputs/OwnerField';
 
+const ENS_SUBGRAPH_API_KEY = '13ef776c0372f7c14eb7c019a0f80272';
+
 const GRAPH_QL_URL = {
-    [mainnet.id]: 'https://api.thegraph.com/subgraphs/name/ensdomains/ens',
-    [goerli.id]: 'https://api.thegraph.com/subgraphs/name/ensdomains/ensgoerli',
+    [mainnet.id]: `https://gateway.thegraph.com/api/${ENS_SUBGRAPH_API_KEY}/subgraphs/id/5XqPmWe6gjyrJtFn9cLy237i4cWw2j9HcUJEXsP5qGtH`,
+    [sepolia.id]:
+        'https://api.studio.thegraph.com/proxy/49574/enssepolia/version/latest',
+    [holesky.id]:
+        'https://api.studio.thegraph.com/proxy/49574/ensholesky/version/latest',
 };
 
 type SubgraphResponse = {
@@ -39,7 +44,7 @@ const fetcher = async ([address, chainId]: [string, number]) => {
         body: JSON.stringify({
             query: `
                 query {
-                    domains(where: { owner: "${address}" }) {
+                    domains(where: {and: [{or: [{owner: "${address}"},{registrant:"${address}"},{wrappedOwner: "${address}"}]},{parent_not: "0x91d1777781884d03a6757a803996e38de2a42967fb37eeaca72729271025a9e2"},{or:[{expiryDate_gt: "1723472244"},{expiryDate: null}]},{or: [{owner_not: "0x0000000000000000000000000000000000000000"},{resolver_not: null},{and: [{registrant_not: "0x0000000000000000000000000000000000000000"},{registrant_not: null}]}]}]}) {
                         name
                         expiryDate
                         registration {
